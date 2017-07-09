@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  node-typescript:
+    image: node-typescript
+    container_name: node-typescript
+    build: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+      - 9229:9229
+    volumes:
+      - .:/usr/src/app
+    command: node --inspect index.js
